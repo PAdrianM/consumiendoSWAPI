@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/fragmentPlanet"
-        android:name="com.example.consumiendoswapi.fragmentPlanet"
+        android:name="com.example.consumiendoswapi.FragmentPlanet"
         android:label="fragment_planet"
-        tools:layout="@layout/fragment_planet" />
+        tools:layout="@layout/fragment_planet" >
+        <action
+            android:id="@+id/action_fragmentPlanet_to_vistaPlaneta"
+            app:destination="@id/vistaPlaneta" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentInicio"
         android:name="com.example.consumiendoswapi.fragmentInicio"
@@ -17,6 +21,21 @@
         tools:layout="@layout/fragment_inicio" >
         <action
             android:id="@+id/action_fragmentInicio_to_fragmentPlanet"
-            app:destination="@id/fragmentPlanet" />
+            app:destination="@id/fragmentPlanet" >
+            <argument
+                android:name="idPlaneta"
+                android:defaultValue="idPlaneta"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/vistaPlaneta"
+        tools:layout="@layout/fragment_vista_planeta"
+        android:name="com.example.consumiendoswapi.VistaPlaneta"
+        android:label="vistaPlaneta" >
+        <argument
+            android:name="idPlaneta"
+            android:defaultValue="idPlaneta"
+            app:argType="string" />
     </fragment>
 </navigation>

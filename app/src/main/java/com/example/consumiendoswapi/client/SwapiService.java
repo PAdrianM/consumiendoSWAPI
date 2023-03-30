@@ -12,5 +12,5 @@ public interface SwapiService {
     Call<PlanetResponse> getPlanets();
 
     @GET("planets/{id}")
-    Call<Planet> getPlanet(@Path("id") int id);
+    Call<Planet> getPlanet(@Path("id") String planetId);
 }

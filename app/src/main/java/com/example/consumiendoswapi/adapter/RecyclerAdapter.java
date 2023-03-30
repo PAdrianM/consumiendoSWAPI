@@ -1,15 +1,22 @@
 package com.example.consumiendoswapi.adapter;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.consumiendoswapi.FragmentPlanet;
+import com.example.consumiendoswapi.FragmentPlanetDirections;
 import com.example.consumiendoswapi.R;
-import com.example.consumiendoswapi.fragmentPlanet;
+import com.example.consumiendoswapi.VistaPlaneta;
 import com.example.consumiendoswapi.models.Planet;
 
 import java.util.List;
@@ -18,15 +25,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
 
     private OnPlanetClickListener onPlanetClickListener;
     private List<Planet> planetList;
+    private NavController navController;
 
-
-    public RecyclerAdapter(fragmentPlanet fragmentPlanet, List<Planet> planetList) {
+    public RecyclerAdapter(Context fragmentPlanet, List<Planet> planetList, NavController navController) {
         this.planetList = planetList;
+        this.navController = navController;
     }
-
-//    public RecyclerAdapter(Context context, List<Planet> planets) {
-//        this.planetList = planetList;
-//    }
 
     @NonNull
     @Override
@@ -46,19 +50,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
         return planetList.size();
     }
 
-    static class PlanetViewHolder extends RecyclerView.ViewHolder {
+   public class PlanetViewHolder extends RecyclerView.ViewHolder {
 
         private TextView nameTextView;
         private TextView climateTextView;
         private TextView terrainTextView;
         private TextView populationTextView;
 
+        private CardView mCardView;
         PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.nameTextView);
             climateTextView = itemView.findViewById(R.id.climateTextView);
             terrainTextView = itemView.findViewById(R.id.terrainTextView);
             populationTextView = itemView.findViewById(R.id.populationTextView);
+            mCardView = itemView.findViewById(R.id.cardViewPlanet);
         }
 
         void bind(Planet planet) {
@@ -66,10 +72,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
             climateTextView.setText("Climate: " + planet.getClimate());
             terrainTextView.setText("Terrain: " + planet.getTerrain());
             populationTextView.setText("Population: " + planet.getPopulation());
+            //Obtengo los 2 ultimos digitos osea el numero y la barra invertida 1/
             String dosCaracteres = planet.getUrl().substring(planet.getUrl().length() - 2);
+            mCardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Crear un onClick de mi CardView
+                    //Llamo al fragment planet Directions que es donde van a estar todas las acciones de mi nav_graph
+                    //Obtengo mi accion en la linea 84
+                    //Linea 85 seteo mi argumento
+                    //con el navController.navigate mando la accion y esta lleva el argumento y hacia donde va
+                    com.example.consumiendoswapi.FragmentPlanetDirections.ActionFragmentPlanetToVistaPlaneta actionFragmentPlanetToVistaPlaneta = FragmentPlanetDirections.actionFragmentPlanetToVistaPlaneta();
+                    actionFragmentPlanetToVistaPlaneta.setIdPlaneta(dosCaracteres);
+                    navController.navigate(actionFragmentPlanetToVistaPlaneta);
+                }
+            });
         }
     }
+
     public interface OnPlanetClickListener {
         void onPlanetClick(int planetId);
     }
 }
+
+

@@ -8,16 +8,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.consumiendoswapi.adapter.RecyclerAdapter;
+import com.example.consumiendoswapi.client.PlanetResponse;
+import com.example.consumiendoswapi.client.SwapiClient;
+import com.example.consumiendoswapi.client.SwapiService;
 import com.example.consumiendoswapi.models.Planet;
 
-public class vistaPlaneta extends Fragment {
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class VistaPlaneta extends Fragment {
 
     private TextView nameTextView;
     private TextView climateTextView;
     private TextView terrainTextView;
     private TextView populationTextView;
-
+    VistaPlanetaArgs args;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +39,7 @@ public class vistaPlaneta extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public vistaPlaneta() {
+    public VistaPlaneta() {
         // Required empty public constructor
     }
 
@@ -41,8 +52,8 @@ public class vistaPlaneta extends Fragment {
      * @return A new instance of fragment vistaPlaneta.
      */
     // TODO: Rename and change types and number of parameters
-    public static vistaPlaneta newInstance(String param1, String param2, int planetId) {
-        vistaPlaneta fragment = new vistaPlaneta();
+    public static VistaPlaneta newInstance(String param1, String param2, int planetId) {
+        VistaPlaneta fragment = new VistaPlaneta();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,16 +73,36 @@ public class vistaPlaneta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_vista_planeta, container, false);
-
-        // Obtener referencias a los TextViews que mostrarán los detalles del planeta
-        nameTextView = rootView.findViewById(R.id.planet_name);
-        climateTextView = rootView.findViewById(R.id.planet_climate);
-        terrainTextView = rootView.findViewById(R.id.planet_terrain);
-        populationTextView = rootView.findViewById(R.id.planet_population);
-
-        return rootView;
+        View view = inflater.inflate(R.layout.fragment_vista_planeta, container, false);
+        //usando argumentos
+        args = VistaPlanetaArgs.fromBundle(getArguments());
+        // Initialize TextViews
+        nameTextView = view.findViewById(R.id.planet_name);
+        climateTextView = view.findViewById(R.id.planet_climate);
+        terrainTextView = view.findViewById(R.id.planet_terrain);
+        populationTextView = view.findViewById(R.id.planet_population);
+        String id = args.getIdPlaneta();
+//      Consumo el servicio
+        SwapiService swapiService = SwapiClient.getClient().create(SwapiService.class);
+        Call<Planet> call = swapiService.getPlanet(id);
+        call.enqueue(new Callback<Planet>() {
+            @Override
+            public void onResponse(Call<Planet> call, Response<Planet> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(getContext(), "CONEXION ESTABLECIDA", Toast.LENGTH_SHORT).show();
+                    Planet planets = response.body();
+                    //Inicializar la lista ya que estaba vacia
+                    showPlanetDetails(planets);
+                }
+            }
+            @Override
+            public void onFailure(Call<Planet> call, Throwable t) {
+                Toast.makeText(getContext(), "ERROR DE CONEXION", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return view;
     }
+
     public void showPlanetDetails(Planet planetDetails) {
         // Mostrar los detalles del planeta en los TextViews correspondientes
         nameTextView.setText(planetDetails.getName());
