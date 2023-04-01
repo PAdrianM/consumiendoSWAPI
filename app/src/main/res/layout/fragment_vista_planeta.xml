@@ -1,36 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/planet_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="320dp"
+        android:background="@color/dorado"
         android:padding="16dp"
         android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/planet_climate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textSize="18sp" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carouselPlanet"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Name" />
 
     <TextView
         android:id="@+id/planet_terrain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/dorado"
         android:padding="16dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planet_population"
+        tools:text="Terrain" />
+
+    <TextView
+        android:id="@+id/planet_climate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dorado"
+        android:padding="16dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planet_terrain"
+        tools:text="Climate" />
 
     <TextView
         android:id="@+id/planet_population"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/dorado"
         android:padding="16dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planet_name"
+        tools:text="Population" />
 
-</LinearLayout>
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/carouselPlanet"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/planets"
+        app:autoPlay="true"
+        app:autoPlayDelay="5000"
+        app:captionMargin="0dp"
+        app:captionTextSize="20sp"
+        app:carouselType="SHOWCASE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showNavigationButtons="false"
+        app:showTopShadow="true"
+        app:topShadowAlpha="0.6"
+        app:topShadowHeight="15dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/dorado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/vader" />
+</androidx.constraintlayout.widget.ConstraintLayout>

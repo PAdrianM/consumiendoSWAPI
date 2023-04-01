@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.example.consumiendoswapi.client.PlanetResponse;
 import com.example.consumiendoswapi.client.SwapiClient;
 import com.example.consumiendoswapi.client.SwapiService;
 import com.example.consumiendoswapi.models.Planet;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +88,7 @@ public class FragmentPlanet extends Fragment {
         View view = inflater.inflate(R.layout.fragment_planet, container, false);
         mSearchView = view.findViewById(R.id.searchView);
 
-        //Aqui empezamos para ver el buscador
+        //Aqui empezamos para ver el buscador y que funcione
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -128,7 +130,16 @@ public class FragmentPlanet extends Fragment {
                 Toast.makeText(getContext(), "ERROR DE CONEXION", Toast.LENGTH_SHORT).show();
             }
         });
+        FloatingActionButton btn1 = view.findViewById(R.id.btnHome);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.fragmentInicio);
+            }
+        });
     }
+    //Funcion buscar Planetas
     private void buscaPlanet(String terminoBusqueda) {
         List<Planet> planetasEncotrados = new ArrayList<>();
         for (Planet planet : planetList) {

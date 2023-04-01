@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -23,9 +24,9 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PlanetViewHolder> {
 
-    private OnPlanetClickListener onPlanetClickListener;
     private List<Planet> planetList;
     private NavController navController;
+
 
     public RecyclerAdapter(Context fragmentPlanet, List<Planet> planetList, NavController navController) {
         this.planetList = planetList;
@@ -56,7 +57,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
         private TextView climateTextView;
         private TextView terrainTextView;
         private TextView populationTextView;
-
         private CardView mCardView;
         PlanetViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,8 +79,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
                 public void onClick(View view) {
                     //Crear un onClick de mi CardView
                     //Llamo al fragment planet Directions que es donde van a estar todas las acciones de mi nav_graph
-                    //Obtengo mi accion en la linea 84
-                    //Linea 85 seteo mi argumento
+                    //Obtengo mi accion en la linea 86
+                    //Linea 87 seteo mi argumento
                     //con el navController.navigate mando la accion y esta lleva el argumento y hacia donde va
                     com.example.consumiendoswapi.FragmentPlanetDirections.ActionFragmentPlanetToVistaPlaneta actionFragmentPlanetToVistaPlaneta = FragmentPlanetDirections.actionFragmentPlanetToVistaPlaneta();
                     actionFragmentPlanetToVistaPlaneta.setIdPlaneta(dosCaracteres);
@@ -88,10 +88,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
                 }
             });
         }
-    }
-
-    public interface OnPlanetClickListener {
-        void onPlanetClick(int planetId);
     }
 }
 
