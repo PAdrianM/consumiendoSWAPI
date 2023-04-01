@@ -105,6 +105,7 @@ public class VistaPlaneta extends Fragment {
                     //Inicializar la lista ya que estaba vacia
                     showPlanetDetails(planets);
                 }
+                //Inicia quemado de Carousel
                 if (nameTextView.getText().equals("Tatooine")){
                     Toast.makeText(getContext(), "Planet Tatooine", Toast.LENGTH_LONG).show();
                     ImageCarousel carousel = view.findViewById(R.id.carouselPlanet);
@@ -223,7 +224,7 @@ public class VistaPlaneta extends Fragment {
             }
             @Override
             public void onFailure(Call<Planet> call, Throwable t) {
-                Toast.makeText(getContext(), "ERROR DE CONEXION", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "ERROR DE CONEXION, VUELVA A INTENTARLO", Toast.LENGTH_SHORT).show();
             }
         });
         FloatingActionButton btn1 = view.findViewById(R.id.btnAtras);
@@ -239,8 +240,8 @@ public class VistaPlaneta extends Fragment {
     public void showPlanetDetails(Planet planetDetails) {
         // Mostrar los detalles del planeta en los TextViews correspondientes
         nameTextView.setText(planetDetails.getName());
-        climateTextView.setText(planetDetails.getClimate());
-        terrainTextView.setText(planetDetails.getTerrain());
-        populationTextView.setText(planetDetails.getPopulation());
+        climateTextView.setText("Climate: " + planetDetails.getClimate());
+        terrainTextView.setText("Terrain: " + planetDetails.getTerrain());
+        populationTextView.setText("Population: " + planetDetails.getPopulation());
     }
 }

@@ -14,7 +14,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/nameTextView"
+            android:id="@+id/nameVehicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -23,28 +23,46 @@
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/terrainTextView"
+            android:id="@+id/modelVehicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            tools:text="Terrain" />
+            tools:text="Model" />
 
         <TextView
-            android:id="@+id/populationTextView"
+            android:id="@+id/manufacturerVehicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            tools:text="population" />
+            tools:text="Manufacturer" />
 
         <TextView
-            android:id="@+id/climateTextView"
+            android:id="@+id/cost_in_creditsVehicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            tools:text="climate" />
+            tools:text="Cost" />
+
+        <TextView
+            android:id="@+id/vehicle_classVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:text="Class" />
+
+        <TextView
+            android:id="@+id/cargo_capacityVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:text="Capacity" />
+
+
 
     </LinearLayout>
 

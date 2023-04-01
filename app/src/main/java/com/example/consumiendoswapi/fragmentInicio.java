@@ -92,6 +92,7 @@ public class fragmentInicio extends Fragment {
         Glide.with(getContext()).load(urlparse3).into(image3);
 
         super.onViewCreated(view, savedInstanceState);
+        //Para ir a planetas
         Button btn1 = view.findViewById(R.id.button);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +100,7 @@ public class fragmentInicio extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.fragmentPlanet);
             }
         });
+        //Para ir a Galeria
         Button btn2 = view.findViewById(R.id.btnGallery);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,12 +108,13 @@ public class fragmentInicio extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.fragmentGallery);
             }
         });
-//        Button btn3 = view.findViewById(R.id.btnEspecies);
-//        btn3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.);
-//            }
-//        });
+        //Para ir a vehiculos
+        Button btn3 = view.findViewById(R.id.btnEspecies);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.fragmentVehicles);
+            }
+        });
     }
 }

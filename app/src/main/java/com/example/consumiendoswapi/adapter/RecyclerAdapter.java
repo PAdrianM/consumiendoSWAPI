@@ -19,6 +19,7 @@ import com.example.consumiendoswapi.FragmentPlanetDirections;
 import com.example.consumiendoswapi.R;
 import com.example.consumiendoswapi.VistaPlaneta;
 import com.example.consumiendoswapi.models.Planet;
+import com.example.consumiendoswapi.models.Vehicle;
 
 import java.util.List;
 

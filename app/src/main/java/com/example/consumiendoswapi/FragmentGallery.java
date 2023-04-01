@@ -153,7 +153,7 @@ public class FragmentGallery extends Fragment {
 
             @Override
             public void onClick(int position, @NotNull CarouselItem carouselItem) {
-                Toast.makeText(getContext(), "Imagen de Star Wars: " + carouselItem.getCaption(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Star Wars Gallery: " + carouselItem.getCaption(), Toast.LENGTH_SHORT).show();
             }
         });
         FloatingActionButton btn1 = view.findViewById(R.id.btnAtrasGallery);

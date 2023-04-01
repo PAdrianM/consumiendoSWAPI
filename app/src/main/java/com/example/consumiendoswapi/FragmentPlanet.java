@@ -117,7 +117,7 @@ public class FragmentPlanet extends Fragment {
             @Override
             public void onResponse(Call<PlanetResponse> call, Response<PlanetResponse> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(getContext(), "CONEXION ESTABLECIDA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "MENU DE PLANETAS", Toast.LENGTH_SHORT).show();
                     List<Planet> planets = response.body().getResults();
                     //Inicializar la lista ya que estaba vacia
                     planetList = response.body().getResults();
@@ -127,7 +127,7 @@ public class FragmentPlanet extends Fragment {
             }
             @Override
             public void onFailure(Call<PlanetResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "ERROR DE CONEXION", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "ERROR DE CONEXION, VUELVA A INTENTARLO", Toast.LENGTH_SHORT).show();
             }
         });
         FloatingActionButton btn1 = view.findViewById(R.id.btnHome);

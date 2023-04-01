@@ -13,4 +13,7 @@ public interface SwapiService {
 
     @GET("planets/{id}")
     Call<Planet> getPlanet(@Path("id") String planetId);
+
+    @GET("vehicles/")
+    Call<VehicleResponse> getVehicles();
 }

@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_fragmentInicio_to_fragmentGallery"
             app:destination="@id/fragmentGallery" />
+        <action
+            android:id="@+id/action_fragmentInicio_to_fragmentVehicles"
+            app:destination="@id/fragmentVehicles" />
     </fragment>
     <fragment
         android:id="@+id/vistaPlaneta"
@@ -54,6 +57,14 @@
         tools:layout="@layout/fragment_gallery" >
         <action
             android:id="@+id/action_fragmentGallery_to_fragmentInicio"
+            app:destination="@id/fragmentInicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVehicles"
+        android:name="com.example.consumiendoswapi.FragmentVehicles"
+        android:label="FragmentVehicles" >
+        <action
+            android:id="@+id/action_fragmentVehicles_to_fragmentInicio"
             app:destination="@id/fragmentInicio" />
     </fragment>
 </navigation>
