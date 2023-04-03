@@ -93,6 +93,7 @@ public class VistaPlaneta extends Fragment {
         populationTextView = view.findViewById(R.id.planet_population);
         String id = args.getIdPlaneta();
 
+        //En base al click de mi cardView la cual me tra el id del planeta que seleccion en base a eso hago mi consumo del planeta seleccionadp
 //      Consumo el servicio
         SwapiService swapiService = SwapiClient.getClient().create(SwapiService.class);
         Call<Planet> call = swapiService.getPlanet(id);

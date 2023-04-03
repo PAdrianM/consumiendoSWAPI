@@ -23,39 +23,42 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:text="Planets"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/btnGallery"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:text="Gallery"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/btnEspecies"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:text="Vehicles"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="150dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/fondo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -64,9 +67,12 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="150dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/fondo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -75,9 +81,12 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="150dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/fondo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"

@@ -82,12 +82,12 @@ public class fragmentInicio extends Fragment {
         Glide.with(getContext()).load(urlparse).into(image1);
 
         //Cargamos el link del gif 2
-        String url2 = "https://media.giphy.com/media/nopqz91prOyvS/giphy.gif";
+        String url2 = "https://media.giphy.com/media/7slfwdWZOSH28/giphy.gif";
         Uri urlparse2 = Uri.parse(url2);
         Glide.with(getContext()).load(urlparse2).into(image2);
 
         //Cargamos el link del gif 3
-        String url3 = "https://media.giphy.com/media/YR2yIaS2m3ewoLp3ke/giphy-downsized-large.gif";
+        String url3 = "https://media.giphy.com/media/oXDVTDfRYNKms/giphy.gif";
         Uri urlparse3 = Uri.parse(url3);
         Glide.with(getContext()).load(urlparse3).into(image3);
 

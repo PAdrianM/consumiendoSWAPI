@@ -6,26 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".FragmentPlanet">
 
-    <SearchView
-        android:id="@+id/searchViewVehicles"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/dorado"
-        android:searchIcon="@drawable/vader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </SearchView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vehicle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/fondo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchViewVehicles"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -37,7 +24,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:src="@drawable/vader"
+        android:src="@drawable/star"
         app:backgroundTint="@color/dorado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

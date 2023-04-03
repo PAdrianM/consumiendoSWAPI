@@ -12,14 +12,14 @@
     <org.imaginativeworld.whynotimagecarousel.ImageCarousel
         android:id="@+id/carousel"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         android:background="@drawable/fondo"
         app:autoPlay="true"
         app:autoPlayDelay="4000"
         app:captionMargin="0dp"
         app:captionTextSize="20sp"
         app:carouselType="SHOWCASE"
-        app:imageScaleType="centerInside"
+        app:imageScaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,7 +28,7 @@
         app:showNavigationButtons="false"
         app:showTopShadow="true"
         app:topShadowAlpha="0.6"
-        app:topShadowHeight="15dp"/>
+        app:topShadowHeight="15dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carousel"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAtrasGallery"
@@ -66,7 +66,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:src="@drawable/vader"
+        android:src="@drawable/star"
         app:backgroundTint="@color/dorado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -105,5 +105,5 @@
         app:backgroundTint="@color/dorado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/vader" />
+        app:srcCompat="@drawable/star" />
 </androidx.constraintlayout.widget.ConstraintLayout>

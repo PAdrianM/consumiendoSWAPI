@@ -82,10 +82,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Planet
                     //Llamo al fragment planet Directions que es donde van a estar todas las acciones de mi nav_graph
                     //Obtengo mi accion en la linea 86
                     //Linea 87 seteo mi argumento
-                    //con el navController.navigate mando la accion y esta lleva el argumento y hacia donde va
+                    //en mi linea 88 con el navController.navigate mando la accion y esta lleva el argumento y hacia donde va
                     com.example.consumiendoswapi.FragmentPlanetDirections.ActionFragmentPlanetToVistaPlaneta actionFragmentPlanetToVistaPlaneta = FragmentPlanetDirections.actionFragmentPlanetToVistaPlaneta();
                     actionFragmentPlanetToVistaPlaneta.setIdPlaneta(dosCaracteres);
                     navController.navigate(actionFragmentPlanetToVistaPlaneta);
+                    //Tengo mi accion que lleva mi IdPlaneta y me dirige a la VistaPlaneta
                 }
             });
         }
