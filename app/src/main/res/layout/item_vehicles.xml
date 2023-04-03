@@ -15,6 +15,7 @@
 
         <TextView
             android:id="@+id/nameVehicle"
+            android:fontFamily="@font/starjout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -24,6 +25,7 @@
 
         <TextView
             android:id="@+id/modelVehicle"
+            android:fontFamily="@font/starjedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -32,6 +34,7 @@
 
         <TextView
             android:id="@+id/manufacturerVehicle"
+            android:fontFamily="@font/starjedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -40,6 +43,7 @@
 
         <TextView
             android:id="@+id/cost_in_creditsVehicle"
+            android:fontFamily="@font/starjedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -48,6 +52,7 @@
 
         <TextView
             android:id="@+id/vehicle_classVehicle"
+            android:fontFamily="@font/starjedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -56,6 +61,7 @@
 
         <TextView
             android:id="@+id/cargo_capacityVehicle"
+            android:fontFamily="@font/starjedi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"

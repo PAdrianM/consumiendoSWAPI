@@ -10,6 +10,7 @@
 
     <TextView
         android:id="@+id/planet_name"
+        android:fontFamily="@font/starjout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="320dp"
@@ -29,6 +30,7 @@
 
     <TextView
         android:id="@+id/planet_terrain"
+        android:fontFamily="@font/starjedi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dorado"
@@ -45,6 +47,7 @@
 
     <TextView
         android:id="@+id/planet_climate"
+        android:fontFamily="@font/starjedi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dorado"
@@ -62,6 +65,7 @@
     <TextView
         android:id="@+id/planet_population"
         android:layout_width="match_parent"
+        android:fontFamily="@font/starjedi"
         android:layout_height="wrap_content"
         android:background="@color/dorado"
         android:padding="16dp"
@@ -90,6 +94,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/starjedi"
         app:showNavigationButtons="false"
         app:showTopShadow="true"
         app:topShadowAlpha="0.6"
